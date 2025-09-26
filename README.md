@@ -1,0 +1,1 @@
+to install the script , plase all files in one dirctory and from comand line run as admin and run this command build.bat   , you will find the .exe file in dist folder , and it will need python 3.10 to work 
