@@ -1,0 +1,20 @@
+import PyInstaller.__main__
+import shutil
+import os
+
+def build_executable():
+    for folder in ["build", "dist"]:
+        if os.path.exists(folder):
+            shutil.rmtree(folder, ignore_errors=True)
+
+    PyInstaller.__main__.run([
+        "installer.py",
+        "--onefile",
+        "--console",       # keep console visible
+        "--clean",
+        "--name", "AT_Installer"
+    ])
+
+if __name__ == "__main__":
+    build_executable()
+    print("Build complete! Check the dist folder for AT_Installer.exe")
